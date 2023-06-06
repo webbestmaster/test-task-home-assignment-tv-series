@@ -1,0 +1,70 @@
+@import "/www/css/var";
+
+.show_item {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid $main-border-color;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: 100%;
+
+    &.show_item__active,
+    &:hover {
+        background-color: $show-item-hover-background-color;
+    }
+}
+
+%show-item-cell,
+.show_item__cell {
+    margin: 0;
+    padding: 19px 16px 14px;
+    vertical-align: top;
+}
+
+.show_item__first_cell {
+    @extend %show-item-cell;
+
+    padding-left: 24px;
+}
+
+.show_item__cell__episode {
+    padding: 19px 16px 14px 24px;
+}
+
+%show-item-text,
+.show_item__text {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.show_item__date {
+    @extend %show-item-text;
+
+    min-width: 80px;
+    text-align: right;
+}
+
+@media screen and (width <= $small-width) {
+    .show_item {
+        display: block;
+    }
+
+    .show_item__first_cell {
+        display: block;
+        padding: 12px 24px 0;
+    }
+
+    .show_item__cell {
+        display: block;
+        padding: 4px 24px;
+    }
+
+    .show_item__date {
+        padding-bottom: 4px;
+        text-align: left;
+    }
+}

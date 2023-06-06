@@ -1,0 +1,32 @@
+@import "/www/css/var";
+
+.rating {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+%rating-stars,
+.rating__stars {
+    color: #bdbdbdbd;
+    font-size: inherit;
+    line-height: 1;
+    position: relative;
+}
+
+.rating__stars__no_rating {
+    @extend %rating-stars;
+
+    text-decoration: line-through;
+}
+
+.rating__stars_filled {
+    color: #efb23e;
+    font-size: inherit;
+    left: 0;
+    line-height: 1;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+}
