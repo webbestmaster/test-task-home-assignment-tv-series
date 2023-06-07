@@ -5,6 +5,7 @@ import {useCallback} from 'react';
 import {Rating} from '../../rating/rating';
 import {ShowType} from '../../../hook/use-search-api/use-search-api-type';
 import {activeShowIdName} from '../../search/search-const';
+import {smoothScrollToTop} from '../../../util/dom';
 
 import showItemStyle from './show-item.scss';
 
@@ -27,6 +28,7 @@ export function ShowItem(props: ShowItemPropsType): JSX.Element {
                 if (Number.isNaN(newId)) {
                     currentURLSearchParameters.delete(activeShowIdName);
                 } else {
+                    smoothScrollToTop();
                     currentURLSearchParameters.set(activeShowIdName, newId.toString(10));
                 }
 
